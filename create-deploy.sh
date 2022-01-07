@@ -6,19 +6,19 @@ echo "Accessing namespace"
 oc project fiap-6aso-grupo32
 
 echo "Deploy blog app"
-oc apply -f https://raw.githubusercontent.com/pessaicow/openshift/main/blog-django-py-git.yml
+oc create -f https://raw.githubusercontent.com/pessaicow/openshift/main/blog-django-py-git.yml
 
-sleep 10
+sleep 15
 
 echo "Deploy HPA autoscale"
-oc apply -f https://raw.githubusercontent.com/pessaicow/openshift/main/hpa-scale.yml
+oc create -f https://raw.githubusercontent.com/pessaicow/openshift/main/hpa-scale.yml
 
-sleep 10
+sleep 15
 
 echo "Deploy DB"
-oc apply -f https://raw.githubusercontent.com/pessaicow/openshift/main/deploy-db.yml
+oc create -f https://raw.githubusercontent.com/pessaicow/openshift/main/deploy-db.yml
 
-sleep 10
+sleep 15
 
 echo "Connect with DB"
 oc set env deployment/blog-django-py-git DATABASE_URL=postgresql://sampledb:sampledb@sample-database:5432/sampledb
