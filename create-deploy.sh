@@ -21,10 +21,10 @@ oc apply -f https://raw.githubusercontent.com/pessaicow/openshift/main/deploy-db
 sleep 10
 
 echo "Connect with DB"
-oc set env deployment/blog-django-py DATABASE_URL=postgresql://sampledb:sampledb@sample-database:5432/sampledb
+oc set env deployment/blog-django-py-git DATABASE_URL=postgresql://sampledb:sampledb@sample-database:5432/sampledb
 
 echo "Set environment vars"
-oc set env deployment/blog-django-py BLOG_SITE_NAME='FIAP 6ASO Grupo32 RM341691'
-oc set env deployment/blog-django-py BLOG_BANNER_COLOR=blue
+oc set env deployment/blog-django-py-git BLOG_SITE_NAME='FIAP 6ASO Grupo32 RM341691'
+oc set env deployment/blog-django-py-git BLOG_BANNER_COLOR=blue
 
 echo "Done! Obrigado! Thiago Soares RM341691 6ASO Grupo32"
