@@ -10,16 +10,16 @@ metadata:
       [{"from":{"kind":"ImageStreamTag","name":"blog-django-py-git:latest","namespace":"fiap-6aso-grupo32"},"fieldPath":"spec.template.spec.containers[?(@.name==\"blog-django-py-git\")].image","pause":"false"}]
     openshift.io/generated-by: OpenShiftWebConsole
   selfLink: /apis/apps/v1/namespaces/fiap-6aso-grupo32/deployments/blog-django-py-git
-  resourceVersion: '12472180'
+  resourceVersion: '14234684'
   name: blog-django-py-git
-  uid: 54301c95-c85c-4791-b065-257c910f6132
-  creationTimestamp: '2022-01-05T00:20:29Z'
-  generation: 3
+  uid: eca7514d-c69b-4e3a-95f3-7a07cd42b437
+  creationTimestamp: '2022-01-07T02:30:59Z'
+  generation: 2
   managedFields:
     - manager: Mozilla
       operation: Update
       apiVersion: apps/v1
-      time: '2022-01-05T00:20:29Z'
+      time: '2022-01-07T02:30:59Z'
       fieldsType: FieldsV1
       fieldsV1:
         'f:metadata':
@@ -82,7 +82,7 @@ metadata:
     - manager: openshift-controller-manager
       operation: Update
       apiVersion: apps/v1
-      time: '2022-01-05T00:21:38Z'
+      time: '2022-01-07T02:32:06Z'
       fieldsType: FieldsV1
       fieldsV1:
         'f:spec':
@@ -94,7 +94,7 @@ metadata:
     - manager: kube-controller-manager
       operation: Update
       apiVersion: apps/v1
-      time: '2022-01-05T00:32:38Z'
+      time: '2022-01-07T02:32:11Z'
       fieldsType: FieldsV1
       fieldsV1:
         'f:metadata':
@@ -134,7 +134,7 @@ metadata:
     app.openshift.io/runtime: python
     app.openshift.io/runtime-version: 3.8-ubi7
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: blog-django-py-git
@@ -148,7 +148,7 @@ spec:
       containers:
         - name: blog-django-py-git
           image: >-
-            image-registry.openshift-image-registry.svc:5000/fiap-6aso-grupo32/blog-django-py-git@sha256:879d64d74b99b6c1ec043ad7e4d28cad12b409cc5e1c09b0fe058df4a22787b0
+            image-registry.openshift-image-registry.svc:5000/fiap-6aso-grupo32/blog-django-py-git@sha256:ae550b5e23de9f635b2c085f70b7104b14bf7d56a0cc22e0dde14949259514bc
           ports:
             - containerPort: 8080
               protocol: TCP
@@ -169,21 +169,21 @@ spec:
   revisionHistoryLimit: 10
   progressDeadlineSeconds: 600
 status:
-  observedGeneration: 3
-  replicas: 2
-  updatedReplicas: 2
-  readyReplicas: 2
-  availableReplicas: 2
+  observedGeneration: 2
+  replicas: 1
+  updatedReplicas: 1
+  readyReplicas: 1
+  availableReplicas: 1
   conditions:
-    - type: Progressing
-      status: 'True'
-      lastUpdateTime: '2022-01-05T00:21:42Z'
-      lastTransitionTime: '2022-01-05T00:20:29Z'
-      reason: NewReplicaSetAvailable
-      message: ReplicaSet "blog-django-py-git-58d5685889" has successfully progressed.
     - type: Available
       status: 'True'
-      lastUpdateTime: '2022-01-05T00:32:38Z'
-      lastTransitionTime: '2022-01-05T00:32:38Z'
+      lastUpdateTime: '2022-01-07T02:32:11Z'
+      lastTransitionTime: '2022-01-07T02:32:11Z'
       reason: MinimumReplicasAvailable
       message: Deployment has minimum availability.
+    - type: Progressing
+      status: 'True'
+      lastUpdateTime: '2022-01-07T02:32:11Z'
+      lastTransitionTime: '2022-01-07T02:30:59Z'
+      reason: NewReplicaSetAvailable
+      message: ReplicaSet "blog-django-py-git-f57f88f7d" has successfully progressed.
